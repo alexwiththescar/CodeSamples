@@ -1,0 +1,71 @@
+/ Content Section
+.container-fluid.map-results-container
+  .row
+    .results-navbar.navbar.navbar-inverse{:style => "border: 0px;"}
+      .col-xs-3.page-results-titles
+        %h1.title= search_title(params)
+        %h4.breadcrumbs= search_breadcrums(params).html_safe
+      %a{"data-toggle" => "modal", :href => "#sub_cat_modal"}
+        .col-xs-3.sub-cat-btn
+          - if params[:cat_search] or params[:search_service].nil?
+            Select...
+          - else
+            = SubCategory.find(params[:search_service]).name
+    .col-sm-6.results-container
+      / Start Result Box
+      .row-results
+        - @services.each do |service|
+          = link_to service_path(service) do
+            .item-results
+              .results
+                - if service.logo.url.blank?
+                  = image_tag('service_missing.jpeg',  :style => "width:auto;height:160px;", :class=>"thumbnail no-margin")
+                - else
+                  = image_tag(service.logo.url(:main).to_s,  :style => "width:100%;height:100%;object-fit: contain;", :class=>"fancybox no-margin")
+                .cat-banner
+                  %p{:style => "display: table-cell;vertical-align: middle; padding-left:20px"}= service.sub_category.name
+                .row{:style => "padding-left:5px ;padding-top:15px"}
+                  .col-xs-10
+                    .results-title
+                      %h3= service.title
+                    .results-description
+                      = service.description[0..100]
+                      \...
+                      %br/
+                      %br/
+                  .col-xs-2{:style => "padding:0px"}
+                    - service.languages.each do |lang|
+                      %h3
+                        %span{:class => "#{lang.fa_code}"}
+                  %div{:style => "clear:both;"}
+                  .results-info
+                    %div{:style => "display:inline-block;"}
+                      = image_tag("location_icon.png")
+                      = service.address2
+                      | 1.5k
+                    %br/
+                    %div{:style => "display:inline-block;"}
+                      = image_tag("phone_icon.png")
+                      = service.mobile
+                  %br/
+            / End Result Box
+    .col-sm-6.map-container{:style => "position: relative;"}
+      %div
+        #map{:style => "position: absolute; top: 0; right: 0; bottom: 0; left: 0;"}
+/ Fixed Height Image Aside
+#sub_cat_modal.modal.fade.in
+  .modal-dialog{:style => "margin-top:200px"}
+    .modal-content
+      .modal-body
+        %ul.subcat-menu
+          - unless cat_button.nil?
+            - cat_button.each do |cat|
+              %li= link_to cat.name,  {:controller => "services", :action => "index", :search_service => cat.id }
+:javascript
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(#{raw @hash.to_json});
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  
+  });

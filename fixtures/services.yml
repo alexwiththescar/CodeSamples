@@ -1,0 +1,195 @@
+
+
+valid_service: &valid
+  name: Steve Bloggs
+  title: A Great Service
+  description: We are simply the best in the business and doing nothing
+  email: email@greatservice.com
+  mobile: 012345222777
+  latitude: 36.5116506
+  longitude: -5.0857959
+  active: true
+  website: www.website.com  
+  avg_rating: 4
+  slug: a_great_service
+
+service_no_title:
+  <<: *valid
+  title: 
+
+service_no_name:
+  <<: *valid
+  name: 
+
+service_no_location:
+  <<: *valid
+  latitude:
+  longitude:
+
+service_not_active:
+  <<: *valid
+  active: false
+
+service_no_slug:
+  <<: *valid
+  slug: 
+
+service_website_with_http:  
+  <<: *valid
+  website: http://website.com 
+
+service_website_without_http:  
+  <<: *valid
+  website: website.com 
+
+malaga:
+  id: 45
+  email: estepona.comercial@barcelo.com
+  mobile: '952899499'
+  created_at: 2016-08-04 15:31:13.000000000 Z
+  updated_at: 2016-08-04 15:31:13.000000000 Z
+  sub_category_id: 35
+  location_id: 213
+  latitude: !ruby/object:BigDecimal 27:0.36483268E2
+  longitude: !ruby/object:BigDecimal 27:-0.498502E1
+  postcode: '29670'
+  address1: 474, Calle Arrieta de Ensanche Marqués Duero
+  address2: Marbella
+  image: 
+  lister_id: <%= ActiveRecord::FixtureSet.identify(:malaga) %>
+  listers_id: 
+  active: true
+  address3: Málaga
+  address4: Andalucía
+  region: 
+  expire_by: 2016-09-04
+  facebook: https://www.facebook.com/Barcel%C3%B3-Estepona-Thalasso-Spa-320501791376554/
+  twitter: https://twitter.com/barceloestepona
+  website: https://www.barcelo.com/barcelohotels/es_es/hoteles/espana/malaga/hotel-barcelo-estepona-thalasso-spa/descripcion-general.aspx
+  google: https://plus.google.com/u/0/115061136706173614535/posts
+  logo: 0062_.png
+  rating_count: 
+  avg_rating: 
+  avarage_rating: 
+  slug: 
+  banner: 
+  opening_hours_type: 
+  opening_hours_hash: !ruby/hash:ActiveSupport::HashWithIndifferentAccess {}
+  name: Barceló Estepona Thalasso Spa
+  title: Barceló Estepona Thalasso Spa - Adults Only
+  description: "Set in a building with a glass elevator"
+
+
+estepona:
+  id: 41
+  email: h10@h10hotels.com
+  mobile: '952790040'
+  created_at: 2016-08-04 14:47:11.000000000 Z
+  updated_at: 2016-08-04 15:10:50.000000000 Z
+  sub_category_id: 65
+  location_id: 214
+  latitude: !ruby/object:BigDecimal 27:0.36416949E2
+  longitude: !ruby/object:BigDecimal 27:-0.5173127E1
+  postcode: '29680'
+  address1: 99, Avenida del Carmen
+  address2: Estepona
+  image: 
+  lister_id: <%= ActiveRecord::FixtureSet.identify(:estepona) %>
+  listers_id: 
+  active: true
+  address3: Málaga
+  address4: Andalucía
+  region: 
+  expire_by: 2016-09-04
+  facebook: https://www.facebook.com/H10.Hotels
+  twitter: https://twitter.com/h10_hotels
+  website: https://www.h10hotels.com/en/costa-del-sol-hotels/h10-andalucia-plaza?utm_source=Google%20My%20Business&utm_medium=Boton%20sitio%20web&utm_campaign=HAP
+  google: https://plus.google.com/+h10hotels
+  logo: 0007.jpg
+  rating_count: 
+  avg_rating: 
+  avarage_rating: 
+  slug: 
+  banner: 
+  opening_hours_type: 
+  opening_hours_hash: !ruby/hash:ActiveSupport::HashWithIndifferentAccess {}
+  name: H10 Hotels
+  title: H10 Hotels
+  description: "H10 Hotels was founded in the early 80s, when it started to operat"
+
+
+
+service_01:
+  id: 36
+  email: info@ibuild.com.es
+  mobile: '622541722'
+  created_at: 2016-08-03 13:44:46.000000000 Z
+  updated_at: 2016-08-03 14:27:36.000000000 Z
+  sub_category_id: 8
+  location_id: 213
+  latitude: !ruby/object:BigDecimal 27:0.36501179E2
+  longitude: !ruby/object:BigDecimal 27:-0.4961268E1
+  postcode: '29660'
+  address1: 35, Calle Paris
+  address2: Marbella
+  image: 
+  lister_id: 55
+  listers_id: 
+  active: true
+  address3: Málaga
+  address4: Andalucía
+  region: 
+  expire_by: 2016-09-03
+  facebook: https://www.facebook.com/ibuild.com.es/
+  twitter: ''
+  website: http://www.ibuild.com.es/
+  google: ''
+  logo: 0002.png
+  rating_count: 
+  avg_rating: 
+  avarage_rating: 
+  slug: 
+  banner: 
+  opening_hours_type: 
+  opening_hours_hash: !ruby/hash:ActiveSupport::HashWithIndifferentAccess {}
+  name: Paul
+  title: iBuild - iNNOVATIVE, iNDIVIDUAL & iNSPIRATIONAL
+  description: "Building a Better Future. Offering intelligent solutions for commercial and residential projects. A personal and professional building "
+
+service_02:
+  id: 37
+  email: info@bioresonance.es
+  mobile: '609664013'
+  created_at: 2016-08-03 14:00:26.000000000 Z
+  updated_at: 2016-08-03 14:00:26.000000000 Z
+  sub_category_id: 99
+  location_id: 214
+  latitude: !ruby/object:BigDecimal 27:0.36421639E2
+  longitude: !ruby/object:BigDecimal 27:-0.5149456E1
+  postcode: '29680'
+  address1: 7
+  address2: Estepona
+  image: 
+  lister_id: 56
+  listers_id: 
+  active: true
+  address3: Málaga
+  address4: Andalucía
+  region: 
+  expire_by: 2016-09-03
+  facebook: ''
+  twitter: ''
+  website: http://www.bioresonance.es/
+  google: ''
+  logo: 0003.jpg
+  rating_count: 
+  avg_rating: 
+  avarage_rating: 
+  slug: 
+  banner: 
+  opening_hours_type: 
+  opening_hours_hash: !ruby/hash:ActiveSupport::HashWithIndifferentAccess {}
+  name: 'Bioresonance '
+  title: Bioresonance Therapy Against Allergies and Intolerances
+  description: "Bioresonance is a biofeedback therapy which can target, stimulate"
+

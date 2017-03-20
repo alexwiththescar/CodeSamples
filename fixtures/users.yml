@@ -1,0 +1,89 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default("0"), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  admin                  :boolean
+#  fname                  :string(255)
+#  lname                  :string(255)
+#  phone                  :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  location_id            :integer
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
+#  provider               :string(255)
+#  uid                    :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+
+one:
+  id: 1
+  email: thesalesstar@gmail.com
+  encrypted_password: "$2a$10$YU5IQqRx/CrvReUd4Td/Q.44EGusdevK3Kug3oh0UIf3N7y7prwZC"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  sign_in_count: 6
+  current_sign_in_at: 2017-02-07 14:58:49.000000000 Z
+  last_sign_in_at: 2017-02-07 11:26:19.000000000 Z
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  admin: 
+  fname: Alex
+  lname: Hick
+  phone: 
+  created_at: 2016-08-17 11:52:53.000000000 Z
+  updated_at: 2017-02-07 14:58:49.000000000 Z
+  location_id: 
+  confirmation_token: 
+  confirmed_at: 2016-08-17 11:52:53.000000000 Z
+  confirmation_sent_at: 
+  unconfirmed_email: 
+  provider: facebook
+  uid: '10153396114610863'
+
+two:
+  id: 2
+  email: info@experiencebox.com
+  encrypted_password: "$2a$10$BqaJnOTgQZQb54/QCNcGnOAz9I/cM3Mc6GPgiPTRJ9HFXtaJYvJkW"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  sign_in_count: 2
+  current_sign_in_at: 2016-09-02 18:21:37.000000000 Z
+  last_sign_in_at: 2016-08-19 13:34:33.000000000 Z
+  current_sign_in_ip: 31.148.242.211
+  last_sign_in_ip: 31.148.242.211
+  admin: 
+  fname: Box Events
+  lname: Team building
+  phone: 
+  created_at: 2016-08-19 13:13:28.000000000 Z
+  updated_at: 2016-09-02 18:21:37.000000000 Z
+  location_id: 214
+  confirmation_token: Exc_eUEqVespmBSfm_DS
+  confirmed_at: 2016-08-19 13:17:22.000000000 Z
+  confirmation_sent_at: 2016-08-19 13:13:28.000000000 Z
+  unconfirmed_email: 
+  provider: 
+  uid: 

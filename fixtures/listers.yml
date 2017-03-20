@@ -1,0 +1,85 @@
+# == Schema Information
+#
+# Table name: listers
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default("0"), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  fname                  :string(255)
+#  lname                  :string(255)
+#  contact_tel            :string(255)
+#  approved_ads           :integer
+#  location_id            :integer
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
+#  language               :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+
+ 
+
+malaga:
+  id: 62
+  email: marbella@barcelo.com
+  encrypted_password: "$2a$10$OlBj3CSuS8DigVlijP..FORJiDPwoEBj93s4chHSr8DMNXLsek7e2"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  sign_in_count: 2
+  current_sign_in_at: 2016-08-04 15:24:56.000000000 Z
+  last_sign_in_at: 2016-08-04 15:11:36.000000000 Z
+  current_sign_in_ip: 31.148.242.211
+  last_sign_in_ip: 31.148.242.211
+  created_at: 2016-08-04 15:11:36.000000000 Z
+  updated_at: 2016-08-04 15:24:56.000000000 Z
+  fname: Barceló Marbella
+  lname: Barceló Marbella
+  contact_tel: 952 88 90 99
+  approved_ads: 
+  location_id: 213
+  confirmation_token: 
+  confirmed_at: 
+  confirmation_sent_at: 
+  unconfirmed_email: 
+  language: 
+
+estepona:
+  email: h10@h10hotels.com
+  encrypted_password: "$2a$10$05bXjP54rpP.TzPwnEuFk.ssodWpsb5cPH5WSvDGOTltH2zh5kwvm"
+  reset_password_token: 
+  reset_password_sent_at: 
+  remember_created_at: 
+  sign_in_count: 3
+  current_sign_in_at: 2016-08-04 15:08:32.000000000 Z
+  last_sign_in_at: 2016-08-04 15:03:49.000000000 Z
+  current_sign_in_ip: 31.148.242.211
+  last_sign_in_ip: 31.148.242.211
+  created_at: 2016-08-04 14:32:46.000000000 Z
+  updated_at: 2016-08-04 15:08:32.000000000 Z
+  fname: H10 Hotels
+  lname: H10 Hotels
+  contact_tel: 902 10 09 06
+  approved_ads: 
+  location_id: 213
+  confirmation_token: 
+  confirmed_at: 
+  confirmation_sent_at: 
+  unconfirmed_email: 
+  language: 

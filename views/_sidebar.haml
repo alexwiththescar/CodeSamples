@@ -1,0 +1,60 @@
+- if @service.logo.url.blank?
+  = image_tag('service_missing.jpeg',  :style => "width:100%; height:auto;max-height:250px;", :class=>"thumbnail no-margin")
+- else
+  = image_tag(@service.logo.url(:main).to_s,  :style => "width:100%; height:auto;max-height:250px;", :class=>"fancybox no-margin")
+
+%div{:style => "color:white;padding:15px"}
+  .title= @service.title
+  - if @service.avarage_rating.nil?
+    No Reviews Yet.
+  - else
+    = @service.avarage_rating.to_i.times do |a|
+      ★
+    - end; nil
+    %br/
+    = @service.ratings.count
+    Reviews
+  - end; nil
+  
+  %hr{:style => "margin-bottom:5px"}/
+  %center{:style => "color: white;font-size:15px"}
+    %ul
+      - unless @service.website.blank?
+        = link_to @service.website.html_safe, @service.website, :target=>"_blank"
+  %hr{:style => "margin-top:5px"}/
+  = truncate(@service.description, length: 100)
+  \...
+%div{:style => "width: 100%;"}
+  #map{:style => " height:200px;"}
+
+:javascript
+  handler = Gmaps.build('Google', { markers: { maxRandomDistance: null } });
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(#{raw @hash.to_json});
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(14);
+  });
+
+%div{:style => "color:white;padding:15px"}
+  %a{"data-toggle" => "modal", :href => "#contactPhone"}
+    = image_tag('phone_temp2.png', :size=>"30")
+    = t('services.view_number')
+    %br/
+  %a{"data-toggle" => "modal", :href => "#contactAdvertiser"}
+    = image_tag('email.png')
+    = t('services.send_message')
+    %br/
+    %br/
+  %span{:style => "font-size:25px;margin:10px"}
+    - @service.languages.each do |lang|
+      %div{:class => "#{lang.fa_code}"}
+  %br/
+  %br/
+  %span
+    - unless @service.facebook.blank?
+      = link_to(image_tag("facebook_icon.png"),  "#{@service.facebook}", :target=>"_blank")
+    - unless @service.twitter.blank?
+      = link_to(image_tag("twitter.png") ,  "#{@service.twitter}", :target=>"_blank")
+    - unless @service.google.blank?
+      = link_to(image_tag("google_plus.png"),  "#{@service.google}", :target=>"_blank")
